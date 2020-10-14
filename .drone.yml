@@ -30,9 +30,7 @@ steps:
       password:
         from_secret: ssh_password
       port: 22
-      envs:
-        - git_token
-        - commiter
+      envs: [git_token, commiter]
       script:
         - echo $git_token && echo $commiter
         - echo ${git_token} && echo ${commiter}
