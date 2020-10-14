@@ -26,12 +26,11 @@ steps:
         from_secret: ssh_password
       port: 22
       envs:
-        - git_auth:
-          from_secret: git_auth_1
+        - GIT_TOKEN
       script:
+        - echo $GIT_TOKEN
         - export GIT_TOKEN_1=$GIT_TOKEN
-        - export TOKEN=$GIT_AUTH && export TOKEN2=$git_auth
         - env
         - cd /root/temp/oms-bi-deploy
-        - git pull https://oauth:${TOKEN}@github.com/RichDataTeam/oms-bi-deploy
+        - git pull https://oauth:${GIT_TOKEN_1}@github.com/RichDataTeam/oms-bi-deploy
 
