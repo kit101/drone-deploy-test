@@ -8,15 +8,13 @@ trigger:
     - master
     - develop
   event:
-    - cron
     - push
-    - pull_request
 
 steps:
   - name: deploy.test
     image: appleboy/drone-ssh
     when:
-      branch: develop
+      branch: master
     settings:
       host: aurora-test.cqrqmy.com
       username: 
