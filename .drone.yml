@@ -59,4 +59,4 @@ steps:
       type: markdown
     commands:
       - env
-      - /app/drone-dingtalk
+      - /bin/drone-dingtalk
