@@ -13,9 +13,11 @@ trigger:
 steps:
   - name: deploy.test
     image: appleboy/drone-ssh
-
     when:
       branch: master
+    environment:
+      GIT_TOKEN:
+        from_secret: git_auth
     settings:
       host: aurora-test.cqrqmy.com
       username: 
@@ -27,7 +29,9 @@ steps:
         - git_auth:
           from_secret: git_auth_1
       script:
+        - export GIT_TOKEN_1=$GIT_TOKEN
         - export TOKEN=$GIT_AUTH && export TOKEN2=$git_auth
         - env
         - cd /root/temp/oms-bi-deploy
         - git pull https://oauth:${TOKEN}@github.com/RichDataTeam/oms-bi-deploy
+
