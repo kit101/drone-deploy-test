@@ -29,3 +29,5 @@ steps:
       script:
         - export git_auth=$GIT_AUTH
         - git pull https://oauth:${git_auth}@github.com/RichDataTeam/oms-bi-deploy
+        
+        
