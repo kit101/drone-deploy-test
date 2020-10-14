@@ -16,8 +16,8 @@ steps:
     when:
       branch: master
     environment:
-      GIT_TOKEN:
-        from_secret: git_auth
+      git_token: 123
+        # from_secret: git_auth_2
     settings:
       host: aurora-test.cqrqmy.com
       username: 
@@ -26,10 +26,10 @@ steps:
         from_secret: ssh_password
       port: 22
       envs:
-        - GIT_TOKEN
+        - git_token
       script:
-        - echo $GIT_TOKEN
-        - export GIT_TOKEN_1=$GIT_TOKEN
+        - echo $git_token
+        - export GIT_TOKEN_1=$git_token
         - env
         - cd /root/temp/oms-bi-deploy
         - git pull https://oauth:${GIT_TOKEN_1}@github.com/RichDataTeam/oms-bi-deploy
