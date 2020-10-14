@@ -43,6 +43,7 @@ steps:
         # - make aurora-test
       commands:
         - env
+        - mkdir oms/21312/23121/31231
   - name: notify
     image: lddsb/drone-dingtalk-message
     when:
