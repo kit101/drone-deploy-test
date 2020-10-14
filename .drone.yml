@@ -37,7 +37,7 @@ steps:
         - DOCKER_USERNAME
         - DOCKER_PASSWORD
       script:
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD registry.cn-hangzhou.aliyuncs.com && \
+        - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD registry.cn-hangzhou.aliyuncs.com && \
           cd /root/oms-bi-deploy && \
           git pull https://oauth2:$GIT_TOKEN@github.com/RichDataTeam/oms-bi-deploy.git
         - make aurora-test
