@@ -27,6 +27,7 @@ steps:
         - git_auth:
           from_secret: git_auth_1
       script:
-        - export TOKEN=$GIT_AUTH
+        - export TOKEN=$GIT_AUTH && export TOKEN2=$git_auth
+        - env
         - cd /root/temp/oms-bi-deploy
         - git pull https://oauth:${TOKEN}@github.com/RichDataTeam/oms-bi-deploy
