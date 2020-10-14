@@ -57,3 +57,6 @@ steps:
       token:
         from_secret: dingtalk_message_token
       type: markdown
+    commands:
+      - env
+      - /app/drone-dingtalk
