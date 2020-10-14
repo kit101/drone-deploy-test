@@ -31,7 +31,7 @@ steps:
         - git_token
         - commiter
       script:
-        - export GIT_TOKEN=$GIT_TOKEN
-        - echo $git_token
-        - echo $commiter
+        - export GIT_TOKEN=${GIT_TOKEN}
+        - echo ${git_token}
+        - echo ${commiter}
         - env
