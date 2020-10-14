@@ -31,7 +31,11 @@ steps:
         - git_token
         - commiter
       script:
-        - export GIT_TOKEN=${{GIT_TOKEN}}
-        - echo ${{git_token}}
-        - echo ${{commiter}}
+        - echo $git_token && $commiter
+        - echo ${git_token} && ${commiter}
+        - echo ${{git_token}} && ${{commiter}}
+        - echo '-----------------------------------'
+        - echo $GIT_TOKEN && $COMMITER
+        - echo ${GIT_TOKEN} && ${COMMITER}
+        - echo ${{GIT_TOKEN}} && ${{COMMITER}}
         - env
