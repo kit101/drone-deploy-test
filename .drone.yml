@@ -1,0 +1,31 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+trigger:
+  branch:
+    - master
+    - develop
+  event:
+    - cron
+    - push
+    - pull_request
+
+steps:
+  - name: deploy.test
+    image: appleboy/drone-ssh
+    when:
+      branch: develop
+    settings:
+      host: aurora-test.cqrqmy.com
+      username: 
+        from_secret: ssh_username
+      password:
+        from_secret: ssh_password
+      port: 22
+      envs:
+        git_auth
+      script:
+        - export git_auth=$GIT_AUTH
+        - git pull https://oauth:${git_auth}@github.com/RichDataTeam/oms-bi-deploy
