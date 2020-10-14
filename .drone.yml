@@ -52,3 +52,5 @@ steps:
       token: 3bccb475232b974384be6c4e6d90c79577ace5f41782a1df5d812085d076b683
       type: markdown
       secret: SECecb6ad4fb693f5a0946174dae96cbf2ce7ff1ef8a0139103ed47cefc8327b502
+      success_color: 2ecc71
+      failure_color: f5222d
