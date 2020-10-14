@@ -24,7 +24,8 @@ steps:
         from_secret: ssh_password
       port: 22
       envs:
-        - git_auth
+        - git_auth:
+          from_secret: git_auth_1
       script:
         - export GIT_AUTH=$GIT_AUTH
         - cd /root/temp/oms-bi-deploy
