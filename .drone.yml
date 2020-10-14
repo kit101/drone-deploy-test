@@ -11,7 +11,7 @@ trigger:
     - push
 
 steps:
-  - name:
+  - name: env
     image: alpine
     commands:
       - env
