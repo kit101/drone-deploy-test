@@ -34,7 +34,7 @@ steps:
         - echo $git_token && $commiter
         - echo ${git_token} && ${commiter}
         - echo ${{git_token}} && ${{commiter}}
-        - echo '-----------------------------------'
+        - echo -----------------------------------
         - echo $GIT_TOKEN && $COMMITER
         - echo ${GIT_TOKEN} && ${COMMITER}
         - echo ${{GIT_TOKEN}} && ${{COMMITER}}
