@@ -36,6 +36,10 @@ steps:
       script:
         - echo $git_token && echo $commiter
         - echo ${git_token} && echo ${commiter}
+        - echo $$git_token && echo $$commiter
+        - echo $${git_token} && echo $${commiter}
         - echo $GIT_TOKEN && echo $COMMITER
         - echo ${GIT_TOKEN} && echo ${COMMITER}
+        - echo $$GIT_TOKEN && echo $$COMMITER
+        - echo $${GIT_TOKEN} && echo $${COMMITER}
         - env
