@@ -16,12 +16,9 @@ steps:
     when:
       branch: master
     environment:
-      git_token:
+      GIT_USER: kit101
+      GIT_TOKEN:
         from_secret: git_auth
-      commiter: ${GIT_AUTHOR_EMAIL}
-    envs:
-      - git_token
-      - commiter
     settings:
       debug: true
       host: aurora-test.cqrqmy.com
@@ -30,14 +27,12 @@ steps:
       password:
         from_secret: ssh_password
       port: 22
-      envs: [git_token, commiter]
+      command_timeout: 2m
+      envs: [ GIT_USER, GIT_TOKEN ]
       script:
-        - echo $git_token && echo $commiter
-        - echo ${git_token} && echo ${commiter}
-        - echo $$git_token && echo $$commiter
-        - echo $${git_token} && echo $${commiter}
-        - echo $GIT_TOKEN && echo $COMMITER
-        - echo ${GIT_TOKEN} && echo ${COMMITER}
-        - echo $$GIT_TOKEN && echo $$COMMITER
-        - echo $${GIT_TOKEN} && echo $${COMMITER}
-        - env
+        - echo $GIT_USER
+        - echo ${GIT_USER}
+        - echo $${GIT_USER}
+        - echo $GIT_TOKEN
+        - echo ${GIT_TOKEN}
+        - echo $${GIT_TOKEN}
