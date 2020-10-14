@@ -13,6 +13,7 @@ trigger:
 steps:
   - name: deploy.test
     image: appleboy/drone-ssh
+
     when:
       branch: master
     settings:
@@ -23,10 +24,8 @@ steps:
         from_secret: ssh_password
       port: 22
       envs:
-        git_auth
+        - git_auth
       script:
-        - export token=$git_auth
-        - cd /root/temp/oms-bi-deploys
+        - export token=$git_auth && export token=$GIT_AUTH
+        - cd /root/temp/oms-bi-deploy
         - git pull https://oauth:${token}@github.com/RichDataTeam/oms-bi-deploy
-        
-        
