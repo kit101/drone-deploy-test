@@ -41,7 +41,7 @@ steps:
         - cd /root/oms-bi-deploy
         - git pull https://oauth2:$GIT_TOKEN@github.com/RichDataTeam/oms-bi-deploy.git
         # - make aurora-test
-        - cd sodmsoa/1231dasd123/123123/213123/213123
+        # - cd sodmsoa/1231dasd123/123123/213123/213123
   - name: notify
     image: lddsb/drone-dingtalk-message
     when:
