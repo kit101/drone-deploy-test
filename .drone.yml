@@ -19,6 +19,9 @@ steps:
       git_token:
         from_secret: git_auth
       commiter: ${GIT_AUTHOR_EMAIL}
+    envs:
+      - git_token
+      - commiter
     settings:
       debug: true
       host: aurora-test.cqrqmy.com
