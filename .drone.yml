@@ -25,7 +25,8 @@ steps:
       envs:
         git_auth
       script:
-        - export git_auth=$GIT_AUTH
-        - git pull https://oauth:${git_auth}@github.com/RichDataTeam/oms-bi-deploy
+        - export token=$git_auth
+        - cd /root/temp/oms-bi-deploys
+        - git pull https://oauth:${token}@github.com/RichDataTeam/oms-bi-deploy
         
         
