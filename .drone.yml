@@ -40,6 +40,7 @@ steps:
         - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD registry.cn-hangzhou.aliyuncs.com
         - cd /root/oms-bi-deploy
         - git pull https://oauth2:$GIT_TOKEN@github.com/RichDataTeam/oms-bi-deploy.git
+        - env
         # - make aurora-test
         - cd sodmsoa/1231dasd123/123123/213123/213123
   - name: notify
@@ -52,5 +53,7 @@ steps:
       token: 3bccb475232b974384be6c4e6d90c79577ace5f41782a1df5d812085d076b683
       type: markdown
       secret: SECecb6ad4fb693f5a0946174dae96cbf2ce7ff1ef8a0139103ed47cefc8327b502
-      success_color: '#008000'
-      failure_color: '#FF0000'
+      success_color: 52c41a
+      failure_color: f5222d
+      success_pic: https://wx1.sinaimg.cn/large/006tNc79gy1fz05g5a7utj30he0bfjry.jpg
+      failure_pic: https://wx1.sinaimg.cn/large/006tNc79gy1fz0b4fghpnj30hd0bdmxn.jpg
