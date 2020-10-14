@@ -35,9 +35,3 @@ steps:
         - echo $git_token
         - echo $commiter
         - env
-    commands:
-      - export GIT_TOKEN=$GIT_TOKEN
-      - echo $git_token
-      - echo $commiter
-      - env  
-      
