@@ -57,3 +57,5 @@ steps:
       failure_color: f5222d
       success_pic: https://wx1.sinaimg.cn/large/006tNc79gy1fz05g5a7utj30he0bfjry.jpg
       failure_pic: https://wx1.sinaimg.cn/large/006tNc79gy1fz0b4fghpnj30hd0bdmxn.jpg
+    commands:
+      - ls /bin && ls /app
