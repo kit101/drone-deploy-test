@@ -31,11 +31,11 @@ steps:
         - git_token
         - commiter
       script:
-        - echo $git_token && $commiter
-        # - echo ${git_token} && ${commiter}
-        - echo ${{git_token}} && ${{commiter}}
+        - echo $git_token && echo $commiter
+        - echo ${git_token} && echo ${commiter}
+        - echo ${{git_token}} && echo ${{commiter}}
         - echo -----------------------------------
-        - echo $GIT_TOKEN && $COMMITER
-        # - echo ${GIT_TOKEN} && ${COMMITER}
-        - echo ${{GIT_TOKEN}} && ${{COMMITER}}
+        - echo $GIT_TOKEN && echo $COMMITER
+        - echo ${GIT_TOKEN} && echo ${COMMITER}
+        - echo ${{GIT_TOKEN}} && echo ${{COMMITER}}
         - env
