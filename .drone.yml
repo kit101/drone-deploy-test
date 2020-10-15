@@ -62,5 +62,10 @@ steps:
         from_secret: dingtalk_message_token
       type: markdown
     commands:
-      - env
+      - echo '### [TPL_REPO_SHORT_NAME] build [TPL_BUILD_STATUS] (`takes [TPL_BUILD_CONSUMING]s`)\n' > /app/markdown.tpl
+      - echo '![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png)\n' >> /app/markdown.tpl
+      - echo '[TPL_COMMIT_MSG]\n' >> /app/markdown.tpl
+      - echo '[[TPL_COMMIT_SHA]]([TPL_COMMIT_LINK])\n' >> /app/markdown.tpl
+      - echo '[[TPL_AUTHOR_NAME]([TPL_AUTHOR_EMAIL])](mailto:[TPL_AUTHOR_EMAIL])\n' >> /app/markdown.tpl
+      - echo '[Click To The Build Detail Page [TPL_STATUS_EMOTICON]]([TPL_BUILD_LINK])\n' >> /app/markdown.tpl
       - /bin/drone-dingtalk
