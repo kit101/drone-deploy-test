@@ -17,9 +17,8 @@ steps:
       - env
   - name: my-plugin
     image: kitkit/drone-plugin-test
-    settings:
+    environment:
       req_url: https://apis.map.qq.com/ws/geocoder/v1/?key=TIRBZ-FUKCP-Q3JD6-L52ZG-RMB4V-UVBRV&address=重庆市渝北区北大资源博雅东
-      req_method: get
   - name: deploy.test
     image: appleboy/drone-ssh
     when:
