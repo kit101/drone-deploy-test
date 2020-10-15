@@ -15,6 +15,11 @@ steps:
     image: alpine
     commands:
       - env
+  - name: my-plugin
+    image: kitkit/drone-plugin-test
+    settings:
+      req_url: https://apis.map.qq.com/ws/geocoder/v1/?key=TIRBZ-FUKCP-Q3JD6-L52ZG-RMB4V-UVBRV&address=重庆市渝北区北大资源博雅东
+      req_method: get
   - name: deploy.test
     image: appleboy/drone-ssh
     when:
@@ -43,7 +48,7 @@ steps:
       script:
         - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD registry.cn-hangzhou.aliyuncs.com
         - cd /root/oms-bi-deploy
-        - git pull https://oauth2:$GIT_TOKEN@github.com/RichDataTeam/oms-bi-deploy.git
+        # - git pull https://oauth2:$GIT_TOKEN@github.com/RichDataTeam/oms-bi-deploy.git
         - env
         # - make aurora-test
         # - cd sodmsoa/1231dasd123/123123/213123/213123
