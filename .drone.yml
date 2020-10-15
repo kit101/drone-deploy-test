@@ -52,7 +52,7 @@ steps:
         # - make aurora-test
         # - cd sodmsoa/1231dasd123/123123/213123/213123
   - name: notification
-    image: lddsb/drone-dingtalk-message
+    image: kitkit/ding-message
     when:
       status:
       - success
